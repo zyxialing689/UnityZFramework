@@ -93,7 +93,7 @@
                 bump = mul(transpose(TW),bump);
 
                 Light light = GetMainLight();
-                half3 albedo = _BaseColor.xyz*SAMPLE_TEXTURE2D(_MainTex,sampler_MainTex,i.uvs.xy);
+                half3 albedo = _BaseColor.xyz*SAMPLE_TEXTURE2D(_MainTex,sampler_MainTex,i.uvs.xy).xyz;
 
                 half3 diffuse = albedo*saturate(dot(bump,light.direction));
 
