@@ -13,7 +13,7 @@
        Tags
        {
          "RenderType" = "Qpaque"
-         "RenderPipeline" = "UniversalR是打发Pipeline"
+         "RenderPipeline" = "UniversalPipeline"
        }
       LOD 300
        HLSLINCLUDE

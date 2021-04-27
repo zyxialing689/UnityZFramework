@@ -48,8 +48,13 @@
             float4 uv:TEXCOORD1;
         };
         ENDHLSL
-        Pass{
-             
+        Pass{    
+                Tags{
+                  "LightMode"="SRPDefaultUnlit"
+                  }
+             Blend SrcAlpha OneMinusSrcAlpha
+             ZWrite Off
+             Cull Front
               HLSLPROGRAM
               #pragma vertex vert
               #pragma fragment frag
@@ -59,13 +64,49 @@
                o.uv.xy = TRANSFORM_TEX(i.uv,_MainTex);
                o.uv.zw = TRANSFORM_TEX(i.uv,_AlphaTex);
                o.positionCS = TransformObjectToHClip(i.positionOS);
-
+               o.noramlWS = TransformObjectToWorldNormal(i.normalOS);
                
                return  o;    
             }
              float4 frag(outData o):SV_Target{
+                 Light light = GetMainLight();
+                 float4 mainColor = SAMPLE_TEXTURE2D(_MainTex,sampler_MainTex,o.uv.xy);
+                 float4 alphaColor = SAMPLE_TEXTURE2D(_AlphaTex,sampler_AlphaTex,o.uv.zw);
+                 float3 diffuse = (0.5+0.5*saturate(dot(light.direction,o.noramlWS)))*mainColor.xyz;
+                 
+                 return float4(diffuse,alphaColor.w);
+             }
+              
+              ENDHLSL
+           }
+          Pass{
+              Tags{
+                  "LightMode"="UniversalForward"
+                  }
+    
+             Blend SrcAlpha OneMinusSrcAlpha
+             ZWrite Off
+             Cull Back
+              HLSLPROGRAM
+              #pragma vertex vert
+              #pragma fragment frag
 
-                 return float4(1,1,1,1);
+              outData vert(inData i){
+               outData o;
+               o.uv.xy = TRANSFORM_TEX(i.uv,_MainTex);
+               o.uv.zw = TRANSFORM_TEX(i.uv,_AlphaTex);
+               o.positionCS = TransformObjectToHClip(i.positionOS);
+               o.noramlWS = TransformObjectToWorldNormal(i.normalOS);
+               
+               return  o;    
+            }
+             float4 frag(outData o):SV_Target{
+                 Light light = GetMainLight();
+                 float4 mainColor = SAMPLE_TEXTURE2D(_MainTex,sampler_MainTex,o.uv.xy);
+                 float4 alphaColor = SAMPLE_TEXTURE2D(_AlphaTex,sampler_AlphaTex,o.uv.zw);
+                 float3 diffuse = (0.5+0.5*saturate(dot(light.direction,o.noramlWS)))*mainColor.xyz;
+                 
+                 return float4(diffuse,alphaColor.w);
              }
               
               ENDHLSL

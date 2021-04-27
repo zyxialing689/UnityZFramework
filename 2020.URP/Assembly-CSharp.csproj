@@ -80,6 +80,7 @@
      <None Include="Assets\GoogleMobileAds\link.xml" />
      <None Include="Assets\ZFramework\Framework\Learn\Shader_HLSL_URP\Shaders\Z基本.shader" />
      <None Include="Assets\ZFramework\Framework\Learn\Shader_HLSL_URP\Shaders\Z法线贴图.shader" />
+     <None Include="Assets\ZFramework\Framework\Learn\Shader_HLSL_URP\Shaders\Z基本 1.shader" />
      <None Include="Assets\ZFramework\Framework\Learn\Shader_HLSL_URP\Shaders\Z兰伯特.shader" />
      <None Include="Assets\ZFramework\Framework\Learn\Shader_HLSL_URP\Shaders\ZAlpha混合.shader" />
     <Reference Include="UnityEngine">
