@@ -4,7 +4,7 @@
 		}
 	SubShader{
         Tags{
-        	  "RenderPipeline"="UniversalRenderPipeline"
+        	  "RenderPipeline"="UniversalPipeline"
         	  "RenderType"="Opaque"
         	}
 		HLSLINCLUDE

@@ -13,7 +13,9 @@
 			SubShader
 			{	
 		    Tags{			
-			  	"RenderPipeline" = "UniversalRenderPipeline"
+		    	//该tag表示指定渲染管线渲染；1：就是当前渲染管线，则调用该subshader。
+		    	//2：不是当前渲染管线，但只有这一个subshader，且该shader没有在当前渲染管线下报错，可以调用该subshader
+			  	"RenderPipeline" = "UniversalPipeline"
 				"RenderType" = "Opaque"
 				}
 

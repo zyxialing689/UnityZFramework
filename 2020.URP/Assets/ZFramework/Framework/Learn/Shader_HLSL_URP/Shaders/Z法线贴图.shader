@@ -13,7 +13,7 @@
         Tags
         { 
             "RenderType"="Qpaque"
-            "RenderPipeline"="UniversalRenderPipeline"
+            "RenderPipeline"="UniversalPipeline"
 
         }
         HLSLINCLUDE

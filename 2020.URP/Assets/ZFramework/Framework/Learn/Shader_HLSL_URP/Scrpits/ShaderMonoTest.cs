@@ -7,7 +7,7 @@ public class ShaderMonoTest : MonoBehaviour
     public int globalMaximumLOD = 0;
     void Start()
     {
-     
+        Shader.globalMaximumLOD = globalMaximumLOD;
     }
 
     // Update is called once per frame

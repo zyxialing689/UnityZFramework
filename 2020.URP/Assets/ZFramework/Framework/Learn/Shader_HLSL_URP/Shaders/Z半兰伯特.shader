@@ -10,7 +10,7 @@
 		Tags
 		 {
 			"RenderType" = "Opaque"
-			"RenderPipeline" = "UniversalRenderPipeline"
+			"RenderPipeline" = "UniversalPipeline"
 		 }
 
 		HLSLINCLUDE

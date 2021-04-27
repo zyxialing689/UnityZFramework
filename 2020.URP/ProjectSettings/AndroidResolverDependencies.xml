@@ -1,11 +1,12 @@
 <dependencies>
   <packages>
     <package>com.google.android.gms:play-services-ads:19.5.0</package>
+    <package>com.google.code.gson:gson:2.8.5</package>
   </packages>
   <files />
   <settings>
     <setting name="androidAbis" value="armeabi-v7a" />
-    <setting name="bundleId" value="com.DefaultCompany.2020.URP" />
+    <setting name="bundleId" value="com.zyxialing.com.admob" />
     <setting name="explodeAars" value="True" />
     <setting name="gradleBuildEnabled" value="True" />
     <setting name="gradlePropertiesTemplateEnabled" value="False" />

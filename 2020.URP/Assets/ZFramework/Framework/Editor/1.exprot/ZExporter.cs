@@ -13,7 +13,7 @@ namespace ZFramework
         /// <param name="fialName">导出的路径，必须以.unitypackage结尾</param>
         private static void ZFExportPackage(string filePath, string fialName)
         {
-            AssetDatabase.ExportPackage(filePath, fialName, ExportPackageOptions.Recurse);
+           // AssetDatabase.ExportPackage(filePath, fialName, ExportPackageOptions.Recurse);
         }
 
 
