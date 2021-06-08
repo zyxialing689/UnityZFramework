@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class ZLogUtil 
 {
-    //public static void Log(object message)
-    //{
-    //    Debug.Log(message);
-    //}
+    public static void Log(object message)
+    {
+        if (ZDefine.ZLog_Switch)
+        {
+            Debug.Log(message);
+        }
+    }
 }
