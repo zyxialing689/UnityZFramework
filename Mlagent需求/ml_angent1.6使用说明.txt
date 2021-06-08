@@ -1,0 +1,9 @@
+1步：命令提示符进入项目目录
+2步：输入命令 py -m venv venv   结果：项目目录会生成一个venv的文件夹
+3步：用命令提示符运行该目录的activate：venv\Scripts\activate
+4步：输入命令 py -m pip install --upgrade pip
+5步：输入命令 pip install torch==1.7.0 0 -f https://download.pytorch.org/whl/torch_stable.html（py3.7对应的版本：torch-1.7.0+cu110-cp37-cp37m-win_amd64.whl）
+第五步不成功可以(因为比较大或者网速非常慢)，直接再网站https://download.pytorch.org/whl/torch_stable.html下载对应得版本，再对应目录输入 pip install 名称
+6步：输入pip install mlagents 保证网络通畅，关闭vpn（如果有报错可以试一试输入pip install mlagents --use-feature=2020-resolver）
+7步：输入mlagents-learn --help检查
+ps：教程https://www.youtube.com/watch?v=zPFU30tbyKs&t=571s
